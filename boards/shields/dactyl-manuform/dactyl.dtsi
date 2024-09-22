@@ -1,6 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <dt-bindings/zmk/bt.h>
-
+#include <dt-bindings/zmk/outputs.h>
 
 / {
     chosen {
@@ -54,11 +53,11 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)    RC(3,6) RC(3,7) RC(3,8) RC(3,
         kscan = <&kscan_sp3t_toggle>; 
         first {
             column = <0>;
-            bindings = <&out OUT_USB>;
+            bindings = <&out OUT_BLE>;
         };
         second {
             column = <1>;
-            bindings = <&out OUT_BLE>;
+            bindings = <&out OUT_USB>
         };
     };
 };
