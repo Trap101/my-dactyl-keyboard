@@ -21,22 +21,6 @@
         , <&pro_micro 9 GPIO_ACTIVE_HIGH>
         ;
 };
-
-/{
-    endpoint_sideband_behaviors {
-        compatible = "zmk,kscan-gpio-direct";
-
-        auto-enable;
-        kscan = <&kscan_sp2t_toggle>;
-
-        first_toggle_sideband: first_toggle_sideband {
-            column = <0>;
-            bindings = <&out OUT_USB>;
-        };
-
-        second_toggle_sideband: second_toggle_sideband {
-            column = <1>;
-            bindings = <&ble_zero>;
-        };
-    };
+&toggle_switch{
+    bindings=<&kp N1 &kp N2>
 }
