@@ -22,5 +22,5 @@
         ;
 };
 &toggle_switch{
-    bindings=<&kp N1 &kp N2>
+    bindings=<&kp N1 &kp N2>;
 }
