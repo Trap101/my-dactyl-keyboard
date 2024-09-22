@@ -31,12 +31,12 @@
 
         first_toggle_sideband: first_toggle_sideband {
             column = <0>;
-            bindings = <&kp N3>;
+            bindings = <&out OUT_USB>;
         };
 
         second_toggle_sideband: second_toggle_sideband {
             column = <1>;
-            bindings = <&kp N4>;
+            bindings = <&ble_zero>;
         };
     };
 }
