@@ -21,6 +21,3 @@
         , <&pro_micro 9 GPIO_ACTIVE_HIGH>
         ;
 };
-&toggle_switch{
-    bindings=<&kp N1 &kp N2>;
-};

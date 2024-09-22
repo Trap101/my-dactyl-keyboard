@@ -38,12 +38,29 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)    RC(3,6) RC(3,7) RC(3,8) RC(3,
             ;
 
     };
-     toggle_switch: toggle_switch {
-        compatible = "zmk,keymap";
+    kscan_sp3t_toggle: kscan_sp3t_toggle {
+        compatible = "zmk,kscan-gpio-direct";
         toggle-mode;
+
         input-gpios
-        = <&pro_micro 0 GPIO_ACTIVE_LOW>
-        , <&pro_micro 1 GPIO_ACTIVE_LOW>
+        = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         ;
+    };
+    endpoint_sideband_behaviour {
+        compatible = "zmk,kscan-sideband-behaviors";
+
+        auto-enable;
+        kscan = <&kscan_sp3t_toggle>;
+
+        first_toggle_sideband: first_toggle_sideband {
+            column = <0>;
+            bindings = <&out OUT_USB>;
+        };
+
+        second_toggle_sideband: second_toggle_sideband {
+            column = <1>;
+            bindings = <&ble_zero>;
+        };
     };
 };
